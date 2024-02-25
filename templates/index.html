@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  {% block head %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href='{% static "bootstrap-5.0.2-dist\css\bootstrap.min.css" %}'
+      rel="stylesheet"
+    />
+    <title>{% block title %}TextaStone{% endblock title %}</title>
+   
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Nucleo Icons -->
+    <link href='{% static "./css/nucleo-icons.css" %}' rel="stylesheet" />
+    <link href='{% static "./css/nucleo-svg.css" %}' rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link id="pagestyle" href='{% static "./css/material-dashboard.css" %}' rel="stylesheet" />
+  </head>
+  {% endblock head %}
+
+  <body>
+    {% block 'body' %}
+    
+    {% endblock %}
+
+    <script src='{% static "bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js" %}'></script>
+    <script src='{% static "jquery-3.7.1.min.js" %}'></script>
+
+    <!--   Core JS Files   -->
+    <script src='{% static "./popper.min.js"  %}'></script>
+    <script src='{% static "./bootstrap.min.js"  %}'></script>
+    <script src='{% static "./perfect-scrollbar.min.js"  %}'></script>
+    <script src='{% static "./smooth-scrollbar.min.js"  %}'></script>
+    <script src='{% static "./chartjs.min.js"  %}'></script>
+
+  </body>
+</html>
