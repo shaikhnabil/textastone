@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone 
+from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from .manager import UserManager
@@ -37,6 +38,7 @@ class Distributor_record(models.Model):
     who_work =  models.ForeignKey(CustomUser,on_delete = models.CASCADE)
     who_provide =  models.ForeignKey(CustomUser,related_name = 'provider',on_delete = models.CASCADE)
     quantity = models.IntegerField(default=1)
+    comission = models.IntegerField(default=0,validators=[MaxValueValidator(500)])
     received_date = models.DateTimeField(default=timezone.now)
     return_date = models.DateTimeField(default=timezone.now)
     deadline_date =  models.DateTimeField(default=timezone.now)
